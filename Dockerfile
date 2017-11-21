@@ -8,7 +8,7 @@ RUN apt-get install -y \
         # install java
         openjdk-8-jdk \
         ant \
-        ca-certificates-java \
+        ca-certificates-java && \
         update-ca-certificates -f    
 
 # Setup JAVA_HOME, this is useful for docker commandline
