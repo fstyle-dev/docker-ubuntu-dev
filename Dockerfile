@@ -4,8 +4,6 @@ RUN apt-get install -y \
         libxext-dev \
         libxrender-dev \
         libxtst-dev \
-        libboost-dev \
-        # install java
         openjdk-8-jdk \
         ant \
         ca-certificates-java && \
