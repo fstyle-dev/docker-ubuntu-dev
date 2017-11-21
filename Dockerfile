@@ -5,15 +5,14 @@ RUN apt-get install -y \
         libxrender-dev \
         libxtst-dev \
         libboost-dev \
-        # install java
-        openjdk-8-jdk \
+        software-properties-common && \
+    add-apt-repository "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" && \
+    apt-get update && \
+    apt-get install -y \
+        oracle-java8-installer \
         ant \
         ca-certificates-java && \
-        update-ca-certificates -f    
-
-# Setup JAVA_HOME, this is useful for docker commandline
-ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
-RUN export JAVA_HOME
+    update-ca-certificates -f    
 
 RUN wget http://mirror.math.princeton.edu/pub/eclipse//technology/epp/downloads/release/oxygen/1a/eclipse-cpp-oxygen-1a-linux-gtk-x86_64.tar.gz -O /tmp/eclipse.tar.gz -q && \
     echo 'Installing eclipse' && \
