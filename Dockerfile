@@ -1,4 +1,4 @@
-FROM fstyle/ubuntu-opencv
+FROM fstyle/ubuntu-opencv:3.3.1-contrib
 
 RUN apt-get install -y \
         libxext-dev \
